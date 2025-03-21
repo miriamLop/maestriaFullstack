@@ -1,0 +1,10 @@
+{
+  "development": {
+    "username": "postgres",
+    "password": "mel150580",
+    "database": "tareaspfinal",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  }
+ 
+}
