@@ -51,5 +51,24 @@ exports.eliminarTarea = async (req, res) => {
     }
 };
 
+exports.buscarTareaId = async (req, res) => {
+    const { id } = req.params;
+
+    try {
+
+        const tarea = await Tarea.findByPk(id);
+        if (!tarea) {
+            return res.status(404).json({ mensaje: "Tarea no encontrado" });
+        }
+
+        res.json(tarea);
+
+    } catch (error) {
+        console.error(error);
+        return res.status(500).json({ message: 'Error interno del servidor' });
+    }
+
+};
+
 
 
