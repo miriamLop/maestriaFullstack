@@ -1,13 +1,14 @@
+const { where } = require('sequelize');
 const { Tarea } = require('../models');
 
 exports.obtenerTarea = async (req, res) => {
-const tareas = await Tarea.findAll();
-res.json(tareas);
+    const tareas = await Tarea.findAll();
+    res.json(tareas);
 };
 
 exports.crearTarea = async (req, res) => {
-const tarea = await Tarea.create(req.body);
-res.status(201).json(tarea);
+    const tarea = await Tarea.create(req.body);
+    res.status(201).json(tarea);
 };
 
 exports.actualizarTarea = async (req, res) => {
@@ -49,3 +50,6 @@ exports.eliminarTarea = async (req, res) => {
         return res.status(500).json({ message: 'Error interno del servidor' });
     }
 };
+
+
+

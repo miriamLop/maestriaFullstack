@@ -7,9 +7,9 @@ const jwt = require('jsonwebtoken');
 const { Usuario } = require('../models'); // Suponiendo que tienes un modelo 'Usuario'
 
 const login = async (req, res) => {
-    const { correo, password } = req.body;
-
-    const usuario = await Usuario.findOne({ where: { correo } });
+    const { email, password } = req.body;
+console.log('contraseña '+email);
+    const usuario = await Usuario.findOne({ where: { email } });
 
     if (!usuario) {
         return res.status(400).json({ message: 'Correo o contraseña incorrectos.' });

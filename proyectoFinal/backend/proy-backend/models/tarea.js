@@ -2,6 +2,7 @@
 const {
   Model
 } = require('sequelize');
+
 module.exports = (sequelize, DataTypes) => {
 
   const Tarea = sequelize.define("Tarea",{
@@ -9,6 +10,7 @@ module.exports = (sequelize, DataTypes) => {
     descripcion: DataTypes.STRING,
     estado: DataTypes.STRING,
     flimite: DataTypes.DATE,
+    usuarioId: DataTypes.INTEGER
     
   });
 

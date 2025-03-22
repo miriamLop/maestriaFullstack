@@ -3,10 +3,10 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
-var indexRouter = require('./routes/index');
+var indexRouter = require('./index');
 var usersRouter = require('./routes/users');
-var usuarioRoutes = require('./routes/usuario.routes');
-var tareaRoutes = require('./routes/tarea.routes');
+var usuarioRoutes = require('./routes/usuarioRoutes');
+var tareaRoutes = require('./routes/tareaRoutes');
 
 
 var app = express();
@@ -22,7 +22,8 @@ app.use('/users', usersRouter);
 
 app.use('/api', usuarioRoutes);
 app.use('/api', tareaRoutes);
-const PORT = process.env.PORT || 3001;
-app.listen(PORT, () => console.log(`Servidor corriendo en http://localhost:${PORT}`));
+
+//const PORT = process.env.PORT || 3001;
+//app.listen(PORT, () => console.log(`Servidor corriendo en http://localhost:${PORT}`));
 
 module.exports = app;
